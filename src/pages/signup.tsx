@@ -43,6 +43,15 @@ export default function SignUP() {
   }
 
   return (
+    <> 
+     <div
+        onClick={() => navigate("/")}
+        className="cursor-pointer mb-2 sm:mb-0 bg-gradient-to-br from-gray-100 via-blue-50 to-gray-200 p-4 "
+      >
+        <h1 className="text-2xl ml-4 font-bold">
+          <span className="text-gray-500">Share</span>Car
+        </h1>
+      </div>
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-100 via-blue-50 to-gray-200 px-2">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-2xl p-4 sm:p-8 border border-gray-200">
         <div className="flex flex-col items-center mb-6">
@@ -102,5 +111,6 @@ export default function SignUP() {
         </div>
       </div>
     </div>
+    </>
   );
 }
