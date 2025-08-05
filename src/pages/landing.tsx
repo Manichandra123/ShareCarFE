@@ -21,7 +21,7 @@ export default function Landing() {
         </div>
        
         <div className="absolute inset-0 flex items-center justify-end  ">
-          <div className=" bg-transparent   backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full mr-8 border border-gray-400">
+          <div className="  bg-gray-50 p-8 rounded-lg shadow-lg max-w-md w-full mr-8 border border-gray-400">
             <h2 className="text-2xl items-center  gap-2 flex font-bold mb-4">
               Welcome to ShareCar 
               <span className="text-black">
@@ -44,7 +44,7 @@ export default function Landing() {
                <InputBox placeholder="Select Date" type="date" />
             </div>
             <div className="flex items-center justify-end mt-4">
-                <Button variant="colored" text="Find Now" size="md" endIcon={<CarTaxiFront/>}/>
+                <Button variant="colored" text="Find Now" size="md" endIcon={<CarTaxiFront/>} onClick={()=>navigate('/bookride')}/>
             </div>
           </div>
         </div>

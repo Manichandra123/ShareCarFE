@@ -2,25 +2,48 @@ import { ArrowRightLeft, Car } from "lucide-react";
 import NavBar from "../components/navbar";
 import InputBox from "../components/inputBox";
 import Button from "../components/Button";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 
 export default function PostRide() {
     const [start ,setStart] = useState("");
     const [end ,setEnd] = useState("");
-    const [date ,setDate] = useState("");
+    let [date ,setDate] = useState("");
     const [mobile ,setMobile] = useState("");
     const [seats ,setSeats] = useState("");
     const [price ,setPrice] = useState("");
     const [carType ,setCarType] = useState("");
+  const [error, setError] = useState("");
+  const [success, setSuccess] = useState("");
+  const navigate = useNavigate();
+  const token = localStorage.getItem("token");
+  
+     
+     useEffect(() => {
+    if (!token) {
+      setError("You must be logged in to post a ride.");
+      navigate('/signin');
+     }
+}, [token, navigate]);
+     
+ 
     const backendUrl = import.meta.env.VITE_Backend_Url || "http://localhost:4000";
     async function handlePostRide() {
+      setError("");
+    setSuccess("");
+    const token = localStorage.getItem("token");
+    console.log("Token:", token);
+        if (!start || !end || !date || !mobile || !seats || !price || !carType) {
+             setError("Please fill in all fields");
+            return;
+        }
         const rideData = {
            startfrom: start,
            endAt: end,
-           fare: price,
+           fare:  Number(price),
            mobileNo: mobile,
            date: date,
            seats: seats,
@@ -28,16 +51,17 @@ export default function PostRide() {
         };
 
         try {
-            const res = await axios.post(`${backendUrl}//create-ride`, rideData, {
+           
+            const res = await axios.post(`${backendUrl}/api/ride/create-ride`, rideData, {
                 headers: {
-                    "Content-Type": "application/json"
-                }
+      Authorization: `Bearer ${token}`,
+    },
             });
             if (res.status === 200) {
-                console.log("Ride posted successfully");
-            }
+                setSuccess("Ride posted successfully");
+            } 
         } catch (error) {
-            console.error('Error posting ride:', error);
+            setError('Error posting ride:');
         }
     }
   return(
@@ -66,6 +90,12 @@ export default function PostRide() {
               Experience seamless rides with our user-friendly platform. Book
               your ride now!
             </p>
+            {error && (
+              <div className="mb-2 text-red-600 text-center text-sm font-medium">{error}</div>
+            )}
+            {success && (
+              <div className="mb-2 text-green-600 text-center text-sm font-medium">{success}</div>
+            )}
             <div className="flex flex-col"> 
             <h3>From</h3>
             <InputBox 
