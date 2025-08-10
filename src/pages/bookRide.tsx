@@ -13,8 +13,7 @@ export default function BookRide() {
 
   useEffect(() => {
     const getRides = async () => {
-      const backendUrl =
-        import.meta.env.VITE_Backend_Url || "http://localhost:4000";
+      const backendUrl = import.meta.env.VITE_Backend_Url || "https://sharecar-3rlo.onrender.com";
       try {
         const res = await axios.get(`${backendUrl}/api/ride/rides`, {
           headers: {
