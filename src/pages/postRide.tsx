@@ -2,7 +2,7 @@ import { ArrowRightLeft, Car } from "lucide-react";
 import NavBar from "../components/navbar";
 import InputBox from "../components/inputBox";
 import Button from "../components/Button";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 

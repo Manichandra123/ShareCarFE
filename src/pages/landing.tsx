@@ -3,9 +3,20 @@ import NavBar from "../components/navbar";
 import InputBox from "../components/inputBox";
 import Button from "../components/Button";
 import {  useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export default function Landing() {
+  const [From, setFrom] = useState("");
+  const [To, setTo] = useState("");
+  const [Date, setDate] = useState("");
     const navigate = useNavigate();
+    function handleFindNow() {
+       if (!From || !To || !Date ) {
+             alert("Please fill in all fields");
+            return;
+        }
+        navigate("/bookride");
+    }
   return (
     <>
        <div className="fixed w-full bg-transparent p-2 flex justify-between items-center z-50 mt-8">
@@ -35,16 +46,22 @@ export default function Landing() {
             </p>
             <div className="flex flex-col"> 
             <h3>From</h3>
-            <InputBox placeholder="Starting from "type="text" />
+            <InputBox
+              onChange={(e)=>setFrom(e.target.value)}
+             placeholder="Starting from "type="text" />
           
             <ArrowRightLeft className="rotate-90 my-2 justify-center items-center " />
               <h3>To</h3>
-               <InputBox placeholder="Traveling To.. "type="text" />
+               <InputBox
+                onChange={(e) => setTo(e.target.value)}
+                placeholder="Traveling To.. "type="text" />
                <h3>Date</h3>
-               <InputBox placeholder="Select Date" type="date" />
+               <InputBox
+                onChange={(e) => setDate(e.target.value)}
+                placeholder="Select Date" type="date" />
             </div>
             <div className="flex items-center justify-end mt-4">
-                <Button variant="colored" text="Find Now" size="md" endIcon={<CarTaxiFront/>} onClick={()=>navigate('/bookride')}/>
+                <Button variant="colored" text="Find Now" size="md" endIcon={<CarTaxiFront/>} onClick={()=>{handleFindNow()}}/>
             </div>
           </div>
         </div>
@@ -96,7 +113,7 @@ export default function Landing() {
       <footer className="bg-white border-t-2 border-black p-8 text-center">
         <div className="max-w-6xl mx-auto">
           <p className="text-lg font-medium">
-            &copy; {new Date().getFullYear()} RideShare. All rights reserved.
+            &copy;  2025 RideShare. All rights reserved.
           </p>
         </div>
       </footer>

@@ -1,16 +1,13 @@
-import axios from "axios";
+ 
 import NavBar from "../components/navbar";
 import { CheckCircle } from 'lucide-react';
-import { useEffect } from "react";
+ 
 import { useNavigate } from "react-router-dom";
 
 export default function MyBookings() {
   const navigate = useNavigate();
 
-
- useEffect(()=>{
-  const res = axios.get(``)
- },[])
+ 
 
   return (
     <>
@@ -23,11 +20,11 @@ export default function MyBookings() {
           <div className="w-full mb-4">
             <div className="flex justify-between text-gray-700 mb-2">
               <span className="font-semibold">Booking ID:</span>
-              <span className="font-mono">{bookingId}</span>
+              <span className="font-mono">N/A</span>
             </div>
             <div className="flex justify-between text-gray-700">
               <span className="font-semibold">Driver Number:</span>
-              <span>{driverNumber}</span>
+              <span>N/A</span>
             </div>
           </div>
           <button
