@@ -30,7 +30,7 @@ export default function PostRide() {
 }, [token, navigate]);
      
  
-const backendUrl = import.meta.env.VITE_Backend_Url || "http://localhost:4000";
+const backendUrl = import.meta.env.VITE_Backend_Url || "https://share-car-fe-w4z6.vercel.app/";
     async function handlePostRide() {
       setError("");
     setSuccess("");
