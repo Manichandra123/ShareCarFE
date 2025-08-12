@@ -47,7 +47,7 @@ export default function BookNow() {
     if (!rideData) return;
     setLoading(true);
     try {
-      const backendUrl = import.meta.env.VITE_Backend_Url || "https://share-car-fe-w4z6.vercel.app/";
+      const backendUrl = import.meta.env.VITE_Backend_Url || "https://sharecar-be.onrender.com";
       await axios.post(
         `${backendUrl}/api/ride/book-ride`,
         {

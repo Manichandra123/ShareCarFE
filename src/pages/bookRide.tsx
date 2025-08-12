@@ -13,7 +13,7 @@ export default function BookRide() {
 
   useEffect(() => {
     const getRides = async () => {
-      const backendUrl = import.meta.env.VITE_Backend_Url || "https://share-car-fe-w4z6.vercel.app/";
+      const backendUrl = import.meta.env.VITE_Backend_Url || "https://sharecar-be.onrender.com";
       const token = localStorage.getItem("token") || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTBjYjE2NGEwY2FmNmEzZjhiMzA5ZSIsImlhdCI6MTc1NDk2NTE3NCwiZXhwIjoxNzU1MDUxNTc0fQ.JGTQdrZqBxE-Milv_ju3oK4_8Va-Ik0Fq_x2wkn9NrE" ;
       if (!token) {
         setError("You must be signed in to view available rides. Please sign in.");
