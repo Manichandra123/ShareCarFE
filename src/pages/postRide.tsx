@@ -30,7 +30,7 @@ export default function PostRide() {
 }, [token, navigate]);
      
  
-const backendUrl = import.meta.env.VITE_Backend_Url || "https://sharecar-be.onrender.com";
+const backendUrl = import.meta.env.VITE_Backend_Url || "http://localhost:4000";
     async function handlePostRide() {
       setError("");
     setSuccess("");

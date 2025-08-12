@@ -6,7 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function SignUP() {
-  const backendUrl = import.meta.env.VITE_Backend_Url || "https://sharecar-be.onrender.com";
+  const backendUrl = import.meta.env.VITE_Backend_Url || "http://localhost:4000";
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
