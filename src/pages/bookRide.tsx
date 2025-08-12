@@ -14,17 +14,29 @@ export default function BookRide() {
   useEffect(() => {
     const getRides = async () => {
       const backendUrl = import.meta.env.VITE_Backend_Url || "https://sharecar-3rlo.onrender.com";
+      const token = localStorage.getItem("token") || "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4OTBjYjE2NGEwY2FmNmEzZjhiMzA5ZSIsImlhdCI6MTc1NDk2NTE3NCwiZXhwIjoxNzU1MDUxNTc0fQ.JGTQdrZqBxE-Milv_ju3oK4_8Va-Ik0Fq_x2wkn9NrE" ;
+      if (!token) {
+        setError("You must be signed in to view available rides. Please sign in.");
+        setLoading(false);
+        return;
+      }
       try {
         const res = await axios.get(`${backendUrl}/api/ride/rides`, {
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${token}`,
           },
         });
         if (res.status === 200) {
           setRides(res.data.rides || []);
         }
-      } catch (error) {
-        setError("Error fetching rides.");
+      } catch (error: any) {
+        let errMsg = "Error fetching rides.";
+        if (error.response && error.response.status === 401) {
+          errMsg = "Session expired or unauthorized. Please sign in again.";
+        } else if (error.message) {
+          errMsg += ` Details: ${error.message}`;
+        }
+        setError(errMsg);
         console.error("Error fetching rides:", error);
       } finally {
         setLoading(false);
