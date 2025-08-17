@@ -34,7 +34,7 @@ export default function PostRide1() {
     setError("");
     setSuccess("");
     const token = localStorage.getItem("token");
-    console.log("Token:", token);
+ 
     if (!start || !end || !date || !mobile || !seats || !price || !carType) {
       setError("Please fill in all fields");
       return;
@@ -171,11 +171,7 @@ export default function PostRide1() {
                   </span>
                 </div>
 
-                <form
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    handlePostRide();
-                  }}
+                <div
                   className="space-y-6"
                 >
         
@@ -288,11 +284,11 @@ export default function PostRide1() {
                       onClick={handlePostRide} 
                     />
                   </div>
-                </form>
+                </div>
               </div>
             </div>
 
-            {/* Modern footer */}
+    
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-between text-sm text-gray-500 px-4 py-3 bg-white/80 backdrop-blur-sm rounded-xl border border-white/30 shadow-sm">
               <div className="flex items-center gap-2 mb-2 sm:mb-0">
                 <span className="flex items-center gap-1">
