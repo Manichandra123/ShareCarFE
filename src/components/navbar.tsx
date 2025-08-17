@@ -27,7 +27,7 @@ export default function NavBar() {
           variant="shaded"
           size="md"
           text="BookRide"
-          onClick={() => navigate("/bookride")}
+          onClick={() => navigate("/bookride1")}
         />
         <Button
           variant="shaded"
