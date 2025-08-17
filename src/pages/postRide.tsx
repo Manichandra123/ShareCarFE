@@ -139,7 +139,7 @@ export default function PostRide1() {
                 <div className="mt-8 space-y-4">
                   <div className="flex items-start gap-3">
                     <div className="bg-indigo-500 rounded-full p-1.5 mt-0.5">
-                      <ShieldCheck   className="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor"/>
+                      <ShieldCheck   className="h-4 w-4 text-black" viewBox="0 0 20 20" fill="currentColor"/>
                     </div>
                     <div>
                       <h4 className="font-medium text-gray-800">Clear Pickup Location</h4>
@@ -148,7 +148,7 @@ export default function PostRide1() {
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="bg-indigo-500 rounded-full p-1.5 mt-0.5">
-                      <CircleCheck className="h-4 w-4 text-white" fill="currentColor" viewBox="0 0 20 20"/>
+                      <CircleCheck className="h-4 w-4 text-black" fill="currentColor" viewBox="0 0 20 20"/>
                      
                     </div>
                     <div>
