@@ -57,7 +57,10 @@ export default function PostRide1() {
       });
       if (res.status === 200) {
         setSuccess("Ride posted successfully");
+        alert("Ride posted successfully");
+        navigate('/bookride');
       }
+
     } catch (error) {
       setError("Error posting ride:");
     }
@@ -81,22 +84,22 @@ export default function PostRide1() {
 
       <div className="relative min-h-screen bg-gradient-to-br from-indigo-50 to-sky-50">
         <div className="h-[50vh] w-full overflow-hidden relative">
-          {/*  gradient background */}
+ 
           <div className="absolute inset-0 bg-gradient-to-br from-indigo-500 via-sky-400 to-purple-500"></div>
 
-          {/* Subtle grid pattern */}
+    
           <div className="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:3rem_3rem]"></div>
           
-          {/* Floating elements */}
+ 
           <div className="absolute -top-20 -left-20 w-96 h-96 bg-purple-400 rounded-full mix-blend-soft-light opacity-30 blur-3xl"></div>
           <div className="absolute -bottom-20 -right-20 w-96 h-96 bg-indigo-400 rounded-full mix-blend-soft-light opacity-30 blur-3xl"></div>
         </div>
 
-        {/* Card container */}
+ 
         <div className="absolute inset-0 flex items-center justify-center mt-12">
           <div className="w-full max-w-5xl mx-6 lg:mx-0">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 -mt-40">
-              {/* Left panel   */}
+ 
               <div className="bg-white/90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/30">
                 <div className="flex items-start gap-4">
                   <div className="bg-indigo-100 p-3 rounded-xl">
@@ -112,7 +115,7 @@ export default function PostRide1() {
                   </div>
                 </div>
 
-                {/* Status banners  */}
+    
                 <div className="mt-6 space-y-3">
                   {error && (
                     <div className="rounded-xl bg-red-50/80 p-4 border border-red-100 text-red-700 flex items-start gap-2">
@@ -159,7 +162,7 @@ export default function PostRide1() {
                 </div>
               </div>
 
-              {/* Right panel */}
+           
               <div className="bg-white/90 backdrop-blur-xl rounded-2xl p-8 shadow-2xl border border-white/30">
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-gray-100">
                   <h3 className="text-xl font-bold text-gray-800">Ride Details</h3>
@@ -175,7 +178,7 @@ export default function PostRide1() {
                   }}
                   className="space-y-6"
                 >
-                  {/* From/To section with enhanced swap */}
+        
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">From</label>
@@ -212,7 +215,7 @@ export default function PostRide1() {
                     </div>
                   </div>
 
-                  {/* Date and Mobile section */}
+       
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Date</label>
@@ -235,7 +238,7 @@ export default function PostRide1() {
                     </div>
                   </div>
 
-                  {/* Seats/Price/Car Type section */}
+ 
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                     <div>
                       <label className="block text-sm font-medium text-gray-700 mb-2">Seats</label>
@@ -266,7 +269,7 @@ export default function PostRide1() {
                     </div>
                   </div>
 
-                  {/* Buttons with modern styling */}
+    
                   <div className="flex items-center justify-end gap-3 pt-4">
                     <Button
                       variant="simple"
