@@ -80,7 +80,7 @@ export default function BookRide() {
         
               onBook={() => {
                   
-                  navigate('/booknow1', {
+                  navigate('/booknow', {
                     state: {
                       rideId: ride._id,
                       from: ride.startfrom,

@@ -42,7 +42,7 @@ export default function Landing() {
       <header className="relative min-h-[72vh] flex items-center">
         
 
-        {/* Right: glass card on desktop, centered on mobile */}
+ 
         <div className="container mx-auto px-6">
           <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between gap-8">
             <div className="w-full lg:w-1/2 text-left mt-12 lg:mt-24">
@@ -74,7 +74,7 @@ export default function Landing() {
                 />
               </div>
 
-              {/* highlights */}
+ 
               <ul className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3 max-w-md">
                 <li className="flex items-center gap-3 text-gray-700">
                   <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-50">
@@ -168,7 +168,7 @@ export default function Landing() {
                 </div>
               </div>
 
-              {/* Quick stats / trust */}
+ 
               <div className="mt-4 flex items-center justify-between text-sm text-gray-600">
                 <span className="flex"> <Check className="text-green-700"/> Verified drivers</span>
                 <span className="flex"><Check className="text-green-700"/> 24/7 support</span>
@@ -178,7 +178,7 @@ export default function Landing() {
         </div>
       </header>
 
-      {/* How it works */}
+ 
       <section id="how-it-works" className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="grid md:grid-cols-3 gap-8">
@@ -204,7 +204,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Join CTA */}
+ 
       <section className="py-20 bg-gradient-to-r from-indigo-600 to-indigo-500 text-white  ">
         <div className="container mx-auto px-6 max-w-4xl text-center  ">
           <h2 className="text-3xl font-extrabold">Join the RideShare Community</h2>
@@ -254,7 +254,7 @@ export default function Landing() {
         </div>
       </section>
 
-      {/* Testimonials */}
+ 
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6 max-w-5xl text-center">
           <h2 className="text-3xl font-bold">What Riders Say</h2>
@@ -280,8 +280,7 @@ export default function Landing() {
           </div>
         </div>
       </section>
-
-      {/* Final CTA */}
+ 
       <section className="py-20 bg-indigo-50 text-center">
         <div className="container mx-auto px-6 max-w-4xl">
           <h2 className="text-3xl font-bold text-indigo-700">
