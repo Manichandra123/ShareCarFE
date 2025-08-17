@@ -7,6 +7,7 @@ import BookRide from "./pages/bookRide";
 import BookNow from "./pages/BookNow";
 import MyBookings from "./pages/mybookings";
  
+ 
 
  
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/bookride" element={<BookRide/>} />
         <Route path="/booknow" element={<BookNow/>} />
         <Route path="/my-bookings" element={<MyBookings/>} />
+         
       
       </Routes>
     </BrowserRouter>
