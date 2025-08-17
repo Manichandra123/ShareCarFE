@@ -6,6 +6,7 @@ import SignUP from "./pages/signup";
 import BookRide from "./pages/bookRide";
 import BookNow from "./pages/BookNow";
 import MyBookings from "./pages/mybookings";
+import BookNow1 from "./pages/booknow1";
  
  
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/bookride" element={<BookRide/>} />
         <Route path="/booknow" element={<BookNow/>} />
         <Route path="/my-bookings" element={<MyBookings/>} />
+        <Route path="/booknow1" element={<BookNow1/>}/>
          
       
       </Routes>
